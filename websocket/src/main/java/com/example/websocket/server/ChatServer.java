@@ -75,6 +75,7 @@ public class ChatServer implements HttpSessionListener {
         se.getSession().setMaxInactiveInterval(1800);
     }
 
+
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
         System.out.println("销毁session");
@@ -403,5 +404,10 @@ public class ChatServer implements HttpSessionListener {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void test1() {
+
     }
 }
