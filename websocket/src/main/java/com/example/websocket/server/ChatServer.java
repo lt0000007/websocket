@@ -386,7 +386,7 @@ public class ChatServer implements HttpSessionListener {
 
 
     /**
-     * 定时给所有用户发送消息
+     * 定时给所有用户发送消息10秒
      *
      */
     @Scheduled(fixedRate = 10000)
