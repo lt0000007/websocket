@@ -407,7 +407,5 @@ public class ChatServer implements HttpSessionListener {
     }
 
 
-    public void test1() {
 
-    }
 }
