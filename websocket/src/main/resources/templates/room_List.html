@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" th:src="@{/roomList.js}"></script>
 </head>
 <body>
 <div style="height:1500px;width:100%;"  id="roomList">
 
 </div>
-<script>
-    function sendRoomCode(code) {
-        window.parent.setRoomCode(code)
-    }
-</script>
+
 </body>
 </html>

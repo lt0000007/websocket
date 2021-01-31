@@ -2,6 +2,7 @@ package com.example.websocket.server;
 
 import com.example.websocket.pojo.Action;
 import com.example.websocket.pojo.MsgModel;
+import com.example.websocket.utils.EncryptionUtils;
 import com.example.websocket.utils.RandomName;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -373,7 +374,12 @@ public class ChatServer implements HttpSessionListener {
             msgModel.setMyCommunication(sid);
             msgModel.setState(Action.SEND_TO_NICK.name());
             msgModel.setSelf(true);
+
+            msgModel.setMsg(null);
+            //加密
+            msgModel.setMsgList(EncryptionUtils.MsgEncryption(msgModel.getMsgList()));
             String msg = new ObjectMapper().writeValueAsString(msgModel);
+
             communicationObject.getSession().getAsyncRemote().sendText(msg);
             session.getAsyncRemote().sendText(msg);
         } catch (JsonProcessingException e) {

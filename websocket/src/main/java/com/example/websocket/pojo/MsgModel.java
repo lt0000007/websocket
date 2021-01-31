@@ -33,7 +33,15 @@ public class MsgModel {
      * 在线群组
      */
     private List<Integer> onLineList;
+    private List<Integer> msgList;
 
+    public List<Integer> getMsgList() {
+        return msgList;
+    }
+
+    public void setMsgList(List<Integer> msgList) {
+        this.msgList = msgList;
+    }
 
     public Map<String, MsgModel> getOnlineMap() {
         return onlineMap;
@@ -50,6 +58,8 @@ public class MsgModel {
     public void setOnLineList(List<Integer> onLineList) {
         this.onLineList = onLineList;
     }
+
+
 
     @JsonIgnore
     private Session session;
@@ -113,6 +123,8 @@ public class MsgModel {
     public String getCommunicationObject() {
         return communicationObject;
     }
+
+
 
     public void setCommunicationObject(String communicationObject) {
         this.communicationObject = communicationObject;
